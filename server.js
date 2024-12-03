@@ -1,6 +1,10 @@
 import express from "express";
 import dotenv from "dotenv";
 import connectDB from "./config/db.js";
+
+import sponsorsRoutes from "./routes/sponsorsRoutes.js";
+import userRoutes from './routes/userRoutes.js'
+
 import attendanceRoute from "./routes/attendanceRoute.js";
 import eventRoute from "./routes/eventRoutes.js";
 
