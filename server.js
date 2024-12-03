@@ -6,21 +6,18 @@ import sponsorsRoutes from "./routes/sponsorsRoutes.js";
 import userRoutes from './routes/userRoutes.js'
 
 import attendanceRoute from "./routes/attendanceRoute.js";
+import eventRoute from "./routes/eventRoutes.js";
 
-dotenv.config(); 
+dotenv.config();
+connectDB();
 
 const app = express();
 app.use(express.json());
-connectDB();
 
-app.use ('/api/Sponsors',sponsorsRoutes);
-app.use('/api/user',userRoutes);
+app.use("/api/attendance", attendanceRoute);
+app.use("/api/event", eventRoute);
 
- const PORT = process.env.PORT || 3000;
- const PORT = process.env.PORT || 3001;
- app.use('/api/attendance', attendanceRoute)
-
- app.listen(PORT, () => {
-    console.log(`Server is running on :${PORT}`);
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+  console.log(`Server is running on :${PORT}`);
 });
-
