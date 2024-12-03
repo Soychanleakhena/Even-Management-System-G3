@@ -18,6 +18,6 @@ const attendanceSchema = new Schema(
 );
 
 
-const attendance = model("attendance", attendanceSchema);
+const attendance = model("newattendance", attendanceSchema);
 export default attendance;
 
