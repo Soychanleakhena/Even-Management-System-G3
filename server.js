@@ -16,6 +16,8 @@ app.use(express.json());
 
 app.use("/api/attendance", attendanceRoute);
 app.use("/api/event", eventRoute);
+app.use("/api/sponsors", sponsorsRoutes);
+app.use("/api/user", userRoutes);
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {

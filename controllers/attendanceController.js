@@ -2,9 +2,9 @@ import attendance from "../models/attendanceModel.js";
 
 const createAttendance = async(req, res) => {
    try {
-    const { name, email, evenId, create_by, update_by } = req.body;
+    const { name, email, evenId, createBy, updateBy } = req.body;
      
-    if (!name || !email || !evenId ){
+    if (!name || !email || !evenId || !createBy || !updateBy){
       return res.status(400).json({ message: "All required field"});
         
     }
@@ -12,8 +12,8 @@ const createAttendance = async(req, res) => {
         name,
         email,
         evenId,
-        create_by,
-        update_by,
+        createBy,
+        updateBy,
 
     });
 

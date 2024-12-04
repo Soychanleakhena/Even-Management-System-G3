@@ -4,9 +4,9 @@ const attendanceSchema = new Schema(
   {
     name: { type: String, min:10,max:50,required: true },
     email: { type: String, min:30, max:50, required: true, unique: true },
-    evenId: { type: Number},
-    create_by:{type: mongoose.Schema.Types.ObjectId,ref:'user'},
-    update_by:{type:mongoose.Schema.Types.ObjectId,ref:'user'}
+    evenId: { type:  mongoose.Schema.Types.ObjectId,ref:'Event'},
+    createBy:{type: mongoose.Schema.Types.ObjectId,ref:'user'},
+    updateBy:{type:mongoose.Schema.Types.ObjectId,ref:'user'}
   },
   {
     timestamps: {
