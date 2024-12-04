@@ -13,11 +13,19 @@ connectDB();
 
 const app = express();
 app.use(express.json());
+connectDB();
 
-app.use("/api/attendance", attendanceRoute);
-app.use("/api/event", eventRoute);
+app.use ('/api/Sponsors',sponsorsRoutes);
+app.use('/api/user',userRoutes);
+app.use('/api/event',eventRoute);
 
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
-  console.log(`Server is running on :${PORT}`);
+
+
+ const PORT = process.env.PORT || 3000;
+ app.use('/api/attendance', attendanceRoute)
+
+ app.listen(PORT, () => {
+    console.log(`Server is running on :${PORT}`);
 });
+
+

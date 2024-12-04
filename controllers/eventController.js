@@ -4,19 +4,25 @@ import Event from "../models/eventModle.js";
 //Create new Event (POST)
 const createEvent = async(req, res) => {
    try {
-    const { name, date, descrpition, venueId, orgaizerId} = req.body;
-     
-    if (!name || !date || !descrpition || !venueId || !orgaizerId){
+    const { name, date, description, venueId } = req.body;
+    const eventData = new Event({ 
+      name, 
+      date, 
+      description, 
+      venueId, });
+
+    await eventData.save();
+    if (!name || !date || !description || !venueId ){
       return res.status(400).json({ message: "All required field"});
         
     }
-    const eventData = new Event({ name, date, descrpition, venueId, orgaizerId });
-    await eventData.save();
+   
     res.status(201).json({ message: "event create successfully" , eventData});
    } catch (error){
     res.status(500).json({ message: "Error create event" });
    }
 };
+
 
 
 
