@@ -1,9 +1,9 @@
 {
   "name": "ems-group3",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "server-test.js",
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon server-test.js"
   },
   "type": "module",
   "keywords": [],
