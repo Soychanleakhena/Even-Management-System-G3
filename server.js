@@ -13,7 +13,6 @@ connectDB();
 
 const app = express();
 app.use(express.json());
-
 connectDB();
 
 app.use ('/api/Sponsors',sponsorsRoutes);
