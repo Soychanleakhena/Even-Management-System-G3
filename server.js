@@ -15,10 +15,10 @@ const app = express();
 app.use(express.json());
 connectDB();
 
-app.use ('/api/Sponsors',sponsorsRoutes);
-app.use('/api/user',userRoutes);
-app.use('/api/event',eventRoute);
-
+app.use("/api/attendance", attendanceRoute);
+app.use("/api/event", eventRoute);
+app.use("/api/sponsors", sponsorsRoutes);
+app.use("/api/user", userRoutes);
 
 
  const PORT = process.env.PORT || 3000;
